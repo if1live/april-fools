@@ -6,13 +6,27 @@
   <h1>청첩장</h1>
   <h2>거짓말 아님!</h2>
   <p>
-    <span id="text-seconds">3.0</span>초만 기다리세요. <br />
-    모바일 청첩장 미리보기 이미지가 부담스러워서 만든 페이지
+    <span id="text-seconds">5.0</span>초만 기다리세요.<br />
+    링크 공유할때 뜨는 미리보기 이미지가 부담스러워서 만든 페이지<br />
   </p>
+
+  <ul>
+    <li>
+      <a href="https://www.barunsonmcard.com/m/bhby0427">
+        인내심 없는 사람을 위한 링크
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/if1live/april-fools">
+        깃헙 스타수는 식사 인원수 측정에 사용될지도?
+      </a>
+    </li>
+  </ul>
 
   <script type="text/javascript">
     function redirect() {
       const nextUrl = "https://www.barunsonmcard.com/m/bhby0427";
+      // const nextUrl = "https://naver.com";
       window.location.href = nextUrl;
     }
 
@@ -23,7 +37,7 @@
     }
 
     const startTime = Date.now();
-    const finishTime = startTime + 3000;
+    const finishTime = startTime + 5000;
     setInterval(() => {
       const now = Date.now();
       const remain = finishTime - now;
