@@ -1,3 +1,36 @@
-<script type="text/javascript">
-  alert("Hello, World!");
-</script>
+<head>
+  <title>모바일 청첩장</title>
+</head>
+
+<body>
+  <h1>거짓말 아님!</h1>
+  <p>
+    <span id="text-seconds">3.0</span>초만 기다리세요. <br />
+    모바일 청첩장 미리보기 이미지가 부담스러워서 만든 페이지
+  </p>
+
+  <script type="text/javascript">
+    function redirect() {
+      const nextUrl = "https://www.barunsonmcard.com/m/bhby0427";
+      window.location.href = nextUrl;
+    }
+
+    /** @param {number} v */
+    function updateWaitTime(v) {
+      const text = v.toFixed(1);
+      document.getElementById("text-seconds").innerHTML = text;
+    }
+
+    const startTime = Date.now();
+    const finishTime = startTime + 3000;
+    setInterval(() => {
+      const now = Date.now();
+      const remain = finishTime - now;
+      if (remain <= 0) {
+        redirect();
+      } else {
+        updateWaitTime(remain / 1000);
+      }
+    }, 100);
+  </script>
+</body>
