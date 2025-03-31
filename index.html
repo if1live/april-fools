@@ -27,6 +27,7 @@
 
   <script type="text/javascript">
     function redirect() {
+      // console.log("redirect");
       const nextUrl = "https://www.barunsonmcard.com/m/bhby0427";
       // const nextUrl = "https://naver.com";
       window.location.href = nextUrl;
@@ -40,11 +41,14 @@
 
     const startTime = Date.now();
     const finishTime = startTime + 5000;
-    setInterval(() => {
+
+    // 리다이렉트가 1번만 실행되게 보장하지 않으면 사파리에서 이상현상 발생하는거로 추정
+    const timer = setInterval(() => {
       const now = Date.now();
       const remain = finishTime - now;
       if (remain <= 0) {
         redirect();
+        clearInterval(timer);
       } else {
         updateWaitTime(remain / 1000);
       }
